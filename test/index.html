@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        <script src="https://raw.github.com/wise9/enchant.js/master/enchant.js"></script>
+        <script src="../src/cssprite.enchant.js"></script>
+        <script>
+            
+            enchant();
+            
+            window.onload = function() {
+                var game = new Game(320, 320);
+                
+                game.onload = function() {
+                    var scene = game.rootScene;
+                    scene.backgroundColor = "black";
+                    
+                    var player = new CSSprite("player", 10, 10);
+                    scene.addChild(player);
+                    
+                    var enemyList = [];
+                    for (var i=0; i<16; ++i) {
+                        var enemy = new CSSprite("enemy", 10, 10);
+                        enemy.x = Math.random()*(320-10);
+                        enemy.y = Math.random()*(320-10);
+                        enemyList.push(enemy);
+                        scene.addChild(enemy);
+                    }
+                    
+                    game.onenterframe = function() {
+                        if (game.input.left)    player.x -= 2;
+                        if (game.input.right)   player.x += 2;
+                        if (game.input.up)      player.y -= 2;
+                        if (game.input.down)    player.y += 2;
+                        
+                        for (var i=0,len=enemyList.length; i<len; ++i) {
+                            var enemy = enemyList[i];
+                            if (player.intersect(enemy)) {
+                                console.log("hit!!");
+                            }
+                        }
+                    };
+                };
+                game.start();
+            };
+        </script>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .player {
+                background-color: red;
+                border-radius: 50%;
+            }
+            
+            .enemy {
+                background-color: white;
+            }
+        </style>
+    </head>
+    
+    <body>
+        
+    </body>
+    
+</html>
