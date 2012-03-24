@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="../css/cssprite.enchant.css">
+        <script src="../lib/enchantjs/enchant.js"></script>
+        <script src="../src/cssprite.enchant.js"></script>
+        <script>
+            
+            enchant();
+            
+            window.onload = function() {
+                var game = new Game(320, 320);
+                
+                game.onload = function() {
+                    var scene = game.rootScene;
+                    scene.backgroundColor = "black";
+                    
+                    
+                    // circle
+                    var circle = new CSSprite("circle", 50, 50);
+                    circle.moveTo(10, 10);
+                    scene.addChild(circle);
+                    
+                    // round-rect
+                    var roundRect = new CSSprite("round-rect", 50, 50);
+                    roundRect.moveTo(70, 10);
+                    scene.addChild(roundRect);
+                    
+                    // rect
+                    var rect = new CSSprite("rect", 50, 50);
+                    rect.moveTo(130, 10);
+                    scene.addChild(rect);
+                    
+                    
+                };
+                game.start();
+            };
+        </script>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .player {
+                background-color: red;
+                border-radius: 50%;
+            }
+            
+            .enemy {
+                background-color: white;
+            }
+        </style>
+    </head>
+    
+    <body>
+        
+    </body>
+    
+</html>
