@@ -3,14 +3,13 @@
  */
 
 .rect {
-    background-color: red;
+    background-color: blue;
 }
 
 .round-rect {
-    border-radius: 10%;
-    background-color: red;
+    border-radius: 25%;
+    background-color: green;
 }
-
 
 .circle {
     border-radius: 50%;
