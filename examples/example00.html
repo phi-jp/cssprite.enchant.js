@@ -18,12 +18,12 @@
                     var scene = game.rootScene;
                     scene.backgroundColor = "black";
                     
-                    var player = new CSSprite("player", 10, 10);
+                    var player = new CSSprite(10, 10, "player");
                     scene.addChild(player);
                     
                     var enemyList = [];
                     for (var i=0; i<16; ++i) {
-                        var enemy = new CSSprite("enemy", 10, 10);
+                        var enemy = new CSSprite(10, 10, "enemy");
                         enemy.x = Math.random()*(320-10);
                         enemy.y = Math.random()*(320-10);
                         enemyList.push(enemy);
