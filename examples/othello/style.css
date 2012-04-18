@@ -1,0 +1,31 @@
+/**
+ *     
+ */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    
+    box-sizing: border-box;
+}
+
+.board {
+    background-color:  green;
+    border-radius: 5px;
+}
+
+.piece {
+    padding: 8px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.white {
+    background-color: white;
+}
+
+.black {
+    background-color: black;
+}
+
